@@ -1,0 +1,24 @@
+type Resource {
+  name: String!
+  team: String!
+  value: Int!
+}
+
+input AddResourceInput {
+  name: String!
+  team: String!
+  value: Int!
+}
+
+input DeleteResourceInput {
+  name: String!
+}
+
+type Query {
+  getResources: [Resource]
+}
+
+type Mutation {
+  addResource(addResourceInput: AddResourceInput!): Resource
+  deleteResource(deleteResourceInput: DeleteResourceInput!): String
+}
